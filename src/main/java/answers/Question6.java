@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class Question6 {
 
-	class State {
+	static class State {
 		public int cn;
 		public int cd;
 		public State(int n, int d) {
@@ -14,7 +14,7 @@ public class Question6 {
 		}
 	}
 
-	class Compare implements Comparator<State> {
+	static class Compare implements Comparator<State> {
 		@Override
 		public int compare(State a0, State a1) {
 			if (a0.cd == a1.cd) return 0;
