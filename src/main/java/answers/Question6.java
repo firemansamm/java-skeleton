@@ -25,7 +25,7 @@ public class Question6 {
 
 	public static int shortestServerRoute(int numServers, int targetServer, int[][] times) {
 		PriorityQueue<State> pq = new PriorityQueue<State>(1, new Compare());
-		Boolean[] v = new Boolean[numServers];
+		boolean[] v = new boolean[numServers + 5];
 		pq.add(new State(0, 0));
 		while(pq.size() != 0) {
 			State c = pq.remove();
