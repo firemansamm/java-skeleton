@@ -25,8 +25,8 @@ public class Question6 {
 		PriorityQueue<State> pq = new PriorityQueue<State>(numServers, new Compare());
 		boolean[] v = new boolean[numServers + 5];
 		pq.add(new State(0, 0));
-		while(pq.size() != 0) {
-			State c = pq.remove();
+		while(pq.peek() != null) {
+			State c = pq.poll();
 			if (c.cn == targetServer) {
 				return c.cd;
 			}
