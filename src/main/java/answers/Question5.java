@@ -12,7 +12,7 @@ public class Question5 {
 		if (sgn == -1) {
 			for(int i=0;i<allowedAllocations.length;i++){
 				allowedAllocations[i] *= sgn;
-				if (allowedAllocations[i] < 0) 
+				//if (allowedAllocations[i] < 0) 
 			}
 		}
 		for(int i=1;i<=totalValue;i++){
