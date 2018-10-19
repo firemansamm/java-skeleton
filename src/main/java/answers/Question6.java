@@ -7,8 +7,8 @@ public class Question6 {
 
 	static class State {
 		public int cn;
-		public long cd;
-		public State(int n, long d) {
+		public int cd;
+		public State(int n, int d) {
 			cn = n;
 			cd = d;
 		}
