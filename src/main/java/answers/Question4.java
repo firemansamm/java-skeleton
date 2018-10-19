@@ -1,10 +1,38 @@
 package answers;
 
+import java.util.Deque;
+
 public class Question4 {
 
 	public static int selectionFailedTradedesks(String[][] rows, int numberMachines) {
-		// TODO Auto-generated method stub
-		return -1;
+		int ans = 1<<30, sm = 0, sz = 0, val = 0;
+		Deque<int> cx = new Deque<int>();
+		for(int i=0;i<rows.length;i++){
+			cx.clear();
+			sm = 0;
+			sz = 0;
+			for(int j=0;j<rows[i].length;j++){
+				if (rows[i][j] == "X") {
+					if (sz != 0) {
+						cx.clear();
+						sz = 0;
+						sm = 0;
+					}
+				} else {
+					val = Integer.parseInt(rows[i][j]);
+					sm += val;
+					sz++;
+					cx.addLast(val);
+					if (sz == numberMachines) {
+						ans = Math.min(sm, ans);
+						sm -= cx.pollFirst();
+						sz--;
+					}
+				}
+			}
+		}
+		if (ans == 1<<30) return 0;
+		else return ans;
 	}
 
 }
