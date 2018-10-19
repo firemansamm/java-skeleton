@@ -6,7 +6,7 @@ public class Question4 {
 
 	public static int selectionFailedTradedesks(String[][] rows, int numberMachines) {
 		int ans = 1<<30, sm = 0, sz = 0, val = 0;
-		Deque<int> cx = new Deque<int>();
+		Deque<Int> cx = new Deque<Int>();
 		for(int i=0;i<rows.length;i++){
 			cx.clear();
 			sm = 0;
