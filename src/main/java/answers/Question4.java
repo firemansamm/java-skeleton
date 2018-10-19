@@ -1,12 +1,13 @@
 package answers;
 
 import java.util.Deque;
+import java.util.ArrayDeque;
 
 public class Question4 {
 
 	public static int selectionFailedTradedesks(String[][] rows, int numberMachines) {
 		int ans = 1<<30, sm = 0, sz = 0, val = 0;
-		Deque<Int> cx = new Deque<Int>();
+		Deque<Integer> cx = new ArrayDeque<Integer>();
 		for(int i=0;i<rows.length;i++){
 			cx.clear();
 			sm = 0;
