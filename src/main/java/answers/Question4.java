@@ -13,7 +13,7 @@ public class Question4 {
 			sm = 0;
 			sz = 0;
 			for(int j=0;j<rows[i].length;j++){
-				if (rows[i][j] == "X") {
+				if (rows[i][j].equals("X")) {
 					if (sz != 0) {
 						cx.clear();
 						sz = 0;
