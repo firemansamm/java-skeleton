@@ -17,14 +17,12 @@ public class Question6 {
 	static class Compare implements Comparator<State> {
 		@Override
 		public int compare(State a0, State a1) {
-			if (a0.cd == a1.cd) return 0;
-			else if (a0.cd < a1.cd) return -1;
-			else return 1;
+			return a0.cd - a1.cd;
 		}
 	}
 
 	public static int shortestServerRoute(int numServers, int targetServer, int[][] times) {
-		PriorityQueue<State> pq = new PriorityQueue<State>(1, new Compare());
+		PriorityQueue<State> pq = new PriorityQueue<State>(numServers, new Compare());
 		boolean[] v = new boolean[numServers + 5];
 		pq.add(new State(0, 0));
 		while(pq.size() != 0) {
