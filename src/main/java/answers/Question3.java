@@ -30,7 +30,7 @@ public class Question3 {
 		int el = edgeList.length;
 		for(int i=0;i<el;i++){
 			Edge e = edgeList[i];
-			int x = e.edgeA, y = e.edgeB;
+			int x = e.getEdgeA(), y = e.getEdgeB();
 			ad.get(x).add(y);
 			ad.get(y).add(x);
 		}
