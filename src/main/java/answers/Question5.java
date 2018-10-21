@@ -6,7 +6,7 @@ public class Question5 {
 
 	public static int shareExchange(int[] allowedAllocations, int totalValue) {
 		if (totalValue < 0) throw new IllegalArgumentException("totalValue < 0: " + totalValue.toString());
-
+		int len = allowedAllocations.length;
 		int[] ans = new int[totalValue + 1];
 		ans[0] = 0;
 		for(int i=1;i<=totalValue;i++){
