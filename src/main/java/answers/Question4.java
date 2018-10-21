@@ -1,11 +1,11 @@
 package answers;
 
-import java.util.LinkedList
+import java.util.LinkedList;
 
 public class Question4 {
 
 	static LinkedList<Integer> cx = new LinkedList<Integer>();
-	
+
 	public static int selectionFailedTradedesks(String[][] rows, int numberMachines) {
 		int ans = 1<<30, sm = 0, sz = 0, val = 0, r = rows.length, c = rows[0].length;
 		for(int i=0;i<r;i++){
