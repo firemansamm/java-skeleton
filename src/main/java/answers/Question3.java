@@ -13,6 +13,7 @@ public class Question3 {
 		if (v[n]) return ret;
 		v[n] = true;
 		int ni = (idx + 1) % 2;
+		System.out.println(n);
 		for(int o : ad.get(n)) {
 			if (v[o]) continue;
 			int[] k = dfs(o, ni);
