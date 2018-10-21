@@ -15,7 +15,7 @@ public class Question4 {
 			String[] v = rows[i];
 			for(int j=0;j<c;j++){
 				String k = v[j];
-				if (k[0] == 'X') {
+				if (k.charAt(0) == 'X') {
 					if (sz != 0) {
 						cx.clear();
 						sz = 0;
