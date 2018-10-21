@@ -1,13 +1,13 @@
 package answers;
 
-import java.util.Deque;
-import java.util.ArrayDeque;
+import java.util.LinkedList
 
 public class Question4 {
 
+	static LinkedList<Integer> cx = new LinkedList<Integer>();
+	
 	public static int selectionFailedTradedesks(String[][] rows, int numberMachines) {
 		int ans = 1<<30, sm = 0, sz = 0, val = 0, r = rows.length, c = rows[0].length;
-		Deque<Integer> cx = new ArrayDeque<Integer>();
 		for(int i=0;i<r;i++){
 			cx.clear();
 			sm = 0;
@@ -25,10 +25,10 @@ public class Question4 {
 					val = Integer.parseInt(k);
 					sm += val;
 					sz++;
-					cx.addLast(val);
+					cx.add(val);
 					if (sz == numberMachines) {
 						if (sm < ans) ans = sm;
-						sm -= cx.pollFirst();
+						sm -= cx.removeFirst();
 						sz--;
 					}
 				}

@@ -4,20 +4,35 @@ import java.util.Arrays;
 
 public class Question5 {
 
+	static class State {
+		public int cn;
+		public int cd;
+		public State(int n, int d) {
+			cn = n;
+			cd = d;
+		}
+	}
+
+	static class Compare implements Comparator<State> {
+		@Override
+		public int compare(State a0, State a1) {
+			return a0.cd - a1.cd;
+		}
+	}
+	static HashMap<Integer, Boolean> v = new HashMap<Integer, Boolean>();
+	static PriorityQueue<State> pq = new PriorityQueue<State>(1, new Compare());
 	public static int shareExchange(int[] allowedAllocations, int totalValue) {
-		if (totalValue < 0) throw new IllegalArgumentException("totalValue < 0: " + Integer.toString(totalValue));
+		/* hmm */
+		pq.add(new State(0, 0));
 		int len = allowedAllocations.length;
-		int[] ans = new int[totalValue + 1];
-		ans[0] = 0;
-		for(int i=1;i<=totalValue;i++){
-			for(int j=0;j<len;j++){
-				int nx = i - allowedAllocations[j];
-				if (nx < 0) continue;
-				if (ans[i] == 0) ans[i] = ans[nx] + 1;
-				else if (ans[nx] + 1 < ans[i]) ans[i] = ans[nx] + 1;
+		while(pq.peek() != null) {
+			State c = pq.poll();
+			if (c.cn == totalValue) return c.cd;
+			for(int i=0;i<len;i++){
+				pq.add(new State(c.cn + allowedAllocations[i], c.cd + 1));
 			}
 		}
-		return ans[totalValue];
+		return -1;
 	}
 
 }
