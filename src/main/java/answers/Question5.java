@@ -29,6 +29,8 @@ public class Question5 {
 		int len = allowedAllocations.length;
 		while(pq.peek() != null) {
 			State c = pq.poll();
+			if (v.get(c.cn) != null) continue;
+			v.put(c.cn, true);
 			if (c.cn == totalValue) return c.cd;
 			for(int i=0;i<len;i++){
 				pq.add(new State(c.cn + allowedAllocations[i], c.cd + 1));
