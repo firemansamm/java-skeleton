@@ -11,8 +11,10 @@ public class Question3 {
 	static int[] dfs(int n, int idx) {
 		int[] ret = new int[]{0, 0};
 		if (v[n]) return ret;
+		v[n] = true;
 		int ni = (idx + 1) % 2;
 		for(int o : ad.get(n)) {
+			if (v[o]) continue;
 			int[] k = dfs(o, ni);
 			ret[0] += k[0];
 			ret[1] += k[1];
