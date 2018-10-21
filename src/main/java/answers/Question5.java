@@ -29,7 +29,10 @@ public class Question5 {
 		int len = allowedAllocations.length;
 		while(pq.peek() != null) {
 			State c = pq.poll();
+			System.err.println(c.cn);
 			if (v.get(c.cn) != null) continue;
+			/* sign check */
+			if ((c.cn < 0 && totalValue > 0) || (c.cn > 0 && totalValue < 0)) continue;
 			v.put(c.cn, true);
 			if (c.cn == totalValue) return c.cd;
 			for(int i=0;i<len;i++){
