@@ -25,6 +25,8 @@ public class Question5 {
 	static PriorityQueue<State> pq = new PriorityQueue<State>(1, new Compare());
 	public static int shareExchange(int[] allowedAllocations, int totalValue) {
 		/* hmm */
+		v.clear();
+		pq.clear();
 		pq.add(new State(0, 0));
 		int len = allowedAllocations.length;
 		while(pq.peek() != null) {

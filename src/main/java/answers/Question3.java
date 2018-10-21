@@ -2,6 +2,7 @@ package answers;
 
 import helpers.Edge;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Question3 {
 
@@ -25,6 +26,7 @@ public class Question3 {
 
 	public static int lowestExposureToExchanges(int numNodes, Edge[] edgeList) {
 		/* build adjlist */
+		Arrays.fill(v, false);
 		ad = new ArrayList<ArrayList<Integer>>(numNodes + 5);
 		for(int i=0;i<=numNodes;i++) {
 			ad.add(new ArrayList<Integer>());
