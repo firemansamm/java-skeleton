@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Question5 {
 
 	public static int shareExchange(int[] allowedAllocations, int totalValue) {
-		if (totalValue < 0) throw new IllegalArgumentException("totalValue < 0: " + totalValue.toString());
+		if (totalValue < 0) throw new IllegalArgumentException("totalValue < 0: " + Integer.toString(totalValue));
 		int len = allowedAllocations.length;
 		int[] ans = new int[totalValue + 1];
 		ans[0] = 0;
