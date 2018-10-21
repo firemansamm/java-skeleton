@@ -3,10 +3,12 @@ package answers;
 public class Question1 {
 
 	public static int bestMergedPortfolio(int[] portfolios) {
-		int ans = 0;
-		for (int i=0;i<portfolios.length;i++) {
-			for(int j=i+1;j<portfolios.length;j++){
-				ans = Math.max(ans, portfolios[i] ^ portfolios[j]);
+		int ans = 0, len = portfolios.length, x;
+		for (int i=0;i<len;i++) {
+			int p = portfolios[i];
+			for(int j=i+1;j<len;j++){
+				x = p ^ portfolios[j];
+				if (x > ans) ans = x;
 			}
 		}
 		return ans;

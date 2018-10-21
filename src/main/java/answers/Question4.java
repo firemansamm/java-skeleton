@@ -6,26 +6,28 @@ import java.util.ArrayDeque;
 public class Question4 {
 
 	public static int selectionFailedTradedesks(String[][] rows, int numberMachines) {
-		int ans = 1<<30, sm = 0, sz = 0, val = 0;
+		int ans = 1<<30, sm = 0, sz = 0, val = 0, r = rows.length, c = rows[0].length;
 		Deque<Integer> cx = new ArrayDeque<Integer>();
-		for(int i=0;i<rows.length;i++){
+		for(int i=0;i<r;i++){
 			cx.clear();
 			sm = 0;
 			sz = 0;
-			for(int j=0;j<rows[i].length;j++){
-				if (rows[i][j][0] == 'X') {
+			String[] v = rows[i];
+			for(int j=0;j<c;j++){
+				String k = v[j];
+				if (k[0] == 'X') {
 					if (sz != 0) {
 						cx.clear();
 						sz = 0;
 						sm = 0;
 					}
 				} else {
-					val = Integer.parseInt(rows[i][j]);
+					val = Integer.parseInt(k);
 					sm += val;
 					sz++;
 					cx.addLast(val);
 					if (sz == numberMachines) {
-						ans = Math.min(sm, ans);
+						if (sm < ans) ans = sm;
 						sm -= cx.pollFirst();
 						sz--;
 					}
