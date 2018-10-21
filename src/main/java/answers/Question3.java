@@ -13,7 +13,6 @@ public class Question3 {
 		if (v[n]) return ret;
 		v[n] = true;
 		int ni = (idx + 1) % 2;
-		System.out.println(n);
 		for(int o : ad.get(n)) {
 			if (v[o]) continue;
 			int[] k = dfs(o, ni);
@@ -27,6 +26,9 @@ public class Question3 {
 	public static int lowestExposureToExchanges(int numNodes, Edge[] edgeList) {
 		/* build adjlist */
 		ad = new ArrayList<ArrayList<Integer>>(numNodes + 5);
+		for(int i=0;i<=numNodes;i++) {
+			ad.add(new ArrayList<Integer>());
+		}
 		v = new boolean[numNodes + 5];
 		int el = edgeList.length;
 		for(int i=0;i<el;i++){
